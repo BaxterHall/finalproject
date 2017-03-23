@@ -1,16 +1,27 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
 const app = express();
 const request = require('request')
 const PORT = 3005;
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+// EXPRESS
+app.listen(PORT, () => {
+    console.log('Server Started on http://localhost:%s', PORT);
+    console.log('Press CTRL + C to stop server');
+});
+// express.static
+
+
+// BODYPARSER
+const bodyParser = require('body-parser')
+app.use(bodyParser.json());
+
+// MONGOOSE
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 const User = require('./userinformation/username');
 const Groceries = require('./userinformation/grocerylist');
 const authorize = require('./middleware/authorize');
-
 mongoose.connect('mongodb://localhost/data/db/');
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
@@ -18,13 +29,15 @@ db.once('open', () => {
 });
 mongoose.Promise = global.Promise;
 
-app.use(bodyParser.json());
+// CORS
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
     res.header("Access-Control-Allow-Methods", "GET,POST,PULL,DELETE");
     next();
 });
+
+
 //Register User
 app.post('/encrypt', (req, res) => {
     // console.log('postrequest')
@@ -168,7 +181,3 @@ app.delete('/groceries/:username/:recipe_id', (req, res) => {
                 .json({ err })
         })
 })
-app.listen(PORT, () => {
-    console.log('Server Started on http://localhost:%s', PORT);
-    console.log('Press CTRL + C to stop server');
-});

@@ -10,31 +10,26 @@ class Navbar extends Component {
             loggedIn: false
         }
         this.logOut = this.logOut.bind(this)
-    }
-
+    };
     componentWillMount() {
         // console.log('mounting')
         // console.log(localStorage.authToken)
         axios.get('http://localhost:3005/verify', { headers: { authorization: localStorage.authToken } })
             .then((res) => {
                 // console.log(res.status)
-
                 if (res.status === 200) {
                     this.setState({ loggedIn: true })
                 }
                 else if (res.status === 403) {
                     this.state = { loggedIn: false }
                 }
-            }
-            )
-
-    }
+            })
+    };
     logOut() {
-
         this.setState({ loggedIn: false })
         localStorage.clear()
         location.href = "http://localhost:3000";
-    }
+    };
     render() {
         let moreThings;
         if (this.state.loggedIn === true) {
@@ -45,8 +40,6 @@ class Navbar extends Component {
                         <li><Link to='/SearchPage'>Search For A Recipe</Link></li>                      
                         <li><Link to='/UserPage'>Your Cart</Link></li>
                         <li className="listText" onClick={this.logOut}>Log Out </li>
-                        
-
                     </ul>
                 </nav>
         }

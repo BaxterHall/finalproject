@@ -4,16 +4,16 @@ import Navbar from './Navbar'
 import Search from './Search'
 
 
-class App extends Component {
+class Home extends Component {
    componentDidMount() {
         document.title = "What Should You Make For Dinner?"
     }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
+      <div className="home">
+        <div className="homeHeader">
           <Navbar />
-          <h2 className="dinnertitle">What Should You Make For Dinner?</h2>
+          <h2 className="homeTitle">What Should You Make For Dinner?</h2>
         </div>
         <Search />
         <div className='container'>
@@ -24,4 +24,4 @@ class App extends Component {
     );
   }
 };
-export default App;
+export default Home;

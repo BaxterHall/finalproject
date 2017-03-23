@@ -79,10 +79,10 @@ body {
   padding-top: 50px;
 }
 /*LandingPage*/
-.App {
+.home {
   text-align: center;
 }
-.App-header {
+.homeHeader {
   height: 500px;
   padding: 20px;
   background-image:url('../public/images/background.jpeg');
@@ -90,7 +90,7 @@ body {
   background-repeat: none;
   background-position: 50% 45%; 
 }
-.dinnertitle{
+.homeTitle{
   padding-top: 20%;
   text-align:center;
   color: white;
@@ -98,11 +98,11 @@ body {
   font-size: 65px;
    text-shadow: 2px 3px 2px black;
 }
-.App-intro {
+.homeIntro {
   font-size: large;
 }
 /*Registration Page*/
-.Register{
+.register{
   background-image: url('../public/images/cooking.jpg');
   background-size:cover;
   background-repeat: none;
@@ -117,7 +117,7 @@ body {
   font-variant: small-caps;
    text-shadow: 2px 3px 2px black;
 }
-#regauth{
+#regAuth{
   position:relative;
   padding-top: 200px;
 }
@@ -142,13 +142,17 @@ body {
   padding-top: 300px;
 }
 /*Search Page*/
-.results-header{
-  background-image: url('../public/images/searchpage.jpg');
+.home {
+  text-align: center;
+}
+.searchHeader{
+  background-image: url('../public/images/searchpage.jpeg');
   background-size:cover;
   background-repeat: none;
-  background-position:   40% 65%; 
+  background-position: 40% 65%;
   height: 500px;
   padding: 20px;
+  text-align:center;
 }
 .searchresults{
   padding-top: 180px;
@@ -220,16 +224,7 @@ a{
   text-align:center;
   text-decoration: underline;
 }
-/*Search Page*/
-.searchHeader{
-  background-image: url('../public/images/searchpage.jpeg');
-  background-size:cover;
-  background-repeat: none;
-  background-position: 40% 65%;
-  height: 500px;
-  padding: 20px;
-  text-align:center;
-}
+
 /*User Page*/
 .userHeader{
   background-image: url('../public/images/userpage.jpg');

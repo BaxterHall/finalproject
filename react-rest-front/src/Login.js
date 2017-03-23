@@ -26,9 +26,9 @@ class Login extends Component {
     };
     componentWillMount() {
         document.title = "Login"
-    }
+    };
     showAlert() {
-        this.msg.show('Login Unsuccessful, Please Try Again'), {
+        this.msg.error('Login Unsuccessful, Please Try Again'), {
             time: 2000,
             type: 'error',       
         }
@@ -52,8 +52,7 @@ class Login extends Component {
                 this.showAlert()
                 this.setState({
                     warning: true
-                })
-                
+                })              
             })
     };
     txtFieldChange(e) {
@@ -69,7 +68,6 @@ class Login extends Component {
         }
     };
     render() {
-
         return (
             <div className='loginHeader'>
                 <div className='container'>

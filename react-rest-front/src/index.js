@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
 import { Router, Route, browserHistory } from 'react-router';
+import Home from './Home';
 import Register from './Register';
 import Login from './Login';
 import SearchResults  from './SearchResults';
 import Recipe from './Recipe';
 import SearchPage from './SearchPage';
 import UserPage from './UserPage';
+import './index.css';
 
 ReactDOM.render(<Router history={browserHistory}>
-  <Route path="/" component={App} />
+  <Route path="/" component={Home} />
   <Route path='/Register' component={Register}/>
   <Route path='/Login' component={Login}/>
   <Route path='/SearchResults' component={SearchResults}/>

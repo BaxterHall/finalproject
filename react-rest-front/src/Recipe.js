@@ -17,7 +17,6 @@ class Recipe extends Component {
             loggedIn: false,
             loaded: false,
         }
-
         this.checkHandler = this.checkHandler.bind(this);
         this.saveList = this.saveList.bind(this)
     };
@@ -25,15 +24,13 @@ class Recipe extends Component {
         axios.get('http://localhost:3005/verify', { headers: { authorization: localStorage.authToken } })
             .then((res) => {
                 // console.log(res.status)
-
                 if (res.status === 200) {
                     this.setState({ loggedIn: true })
                 }
                 else if (res.status === 403) {
                     this.state = { loggedIn: false }
                 }
-            }
-            )
+            })
         axios.get('http://localhost:3005/recipe/' + localStorage.id)
             .then(response => {
                 // console.log(response.data.newRecipe)
@@ -45,7 +42,7 @@ class Recipe extends Component {
                 // console.log(this.state.recipe)
             })
         document.title = "Your Recipe"
-    }
+    };
     checkHandler(event, i) {
         if (event.target.checked) {
             this.state.ingredients[i].need = true;
@@ -67,8 +64,7 @@ class Recipe extends Component {
         }
         localStorage.recipeTitle = JSON.stringify(this.state.recipe.title)
         localStorage.groceryList = JSON.stringify(this.state.ingredients)
-
-    }
+    };
     saveList() {
         axios
             .post('http://localhost:3005/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })

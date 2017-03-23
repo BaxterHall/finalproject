@@ -44,7 +44,7 @@ class Register extends Component {
 
     render() {
         return (
-            <div className='Register'>
+            <div className='register'>
 
                 <div className='container'>
 
@@ -52,7 +52,7 @@ class Register extends Component {
                         <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
                             <Navbar />
                             <h3 className="registration">Register</h3>
-                            <div id="regauth">
+                            <div id="regAuth">
 
                                 <form onSubmit={this.formSubmit}>
                                     <div className="form-group">
