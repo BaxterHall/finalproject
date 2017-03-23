@@ -10,7 +10,7 @@ app.listen(PORT,() => {
 	console.log("Stop with Ctrl+C");
 });
 // express.static
-   app.use(express.static(__dirname + './../build'));
+   app.use(express.static(__dirname + './../react-rest-front/build'));
 
 
 // BODYPARSER
