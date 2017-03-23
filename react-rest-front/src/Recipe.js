@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Navbar from './Navbar'
-import { Button } from 'react-bootstrap';
 import './index.css';
 
 class Recipe extends Component {
