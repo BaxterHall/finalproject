@@ -13,7 +13,7 @@ class SearchPage extends Component {
       <div className="search">
         <div className="searchHeader">
           <Navbar />
-          <h2 className="searchTitle">What Should You Make For Dinner?</h2>
+          <h2 className="secondHomeTitle">What Should You Make For Dinner?</h2>
         </div>
         <Search />
         <div className='container'>

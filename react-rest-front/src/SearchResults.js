@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar'
-
 import './index.css';
 
 class SearchResults extends Component {

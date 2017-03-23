@@ -175,6 +175,14 @@ body {
 .searchtext{
   text-align:center;
 }
+.secondHomeTitle{
+  padding-top: 180px;
+  color: white;
+  font-size: 65px;
+  text-align:center;
+  font-variant: small-caps;
+  text-shadow: 2px 3px 2px black;
+}
 #searchBar{
   text-align:center;
   height: 27px;
@@ -252,5 +260,14 @@ a{
   text-shadow: 2px 3px 2px black;
 }
 .empty{
+  text-align:center;
+}
+.results-header{
+  background-image: url('../public/images/searchpage.jpeg');
+  background-size:cover;
+  background-repeat: none;
+  background-position: 40% 65%;
+  height: 500px;
+  padding: 20px;
   text-align:center;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './index.css';
 import Navbar from './Navbar';
+import AlertContainer from 'react-alert';
 
 
 class Register extends Component {
@@ -10,11 +11,20 @@ class Register extends Component {
         this.state = {
             username: null,
             password: null,
+            warning: null
             // email: null,
         };
         this.formSubmit = this.formSubmit.bind(this);
         this.txtFieldChange = this.txtFieldChange.bind(this);
-    }
+        this.showAlert = this.showAlert.bind(this);
+        this.alertOption = {
+            offset: 15,
+            position: 'top right',
+            theme: 'dark',
+            time: 5000,
+            transition: 'fade'
+        };
+    };
     componentWillMount() {
         document.title = "Register"
     }
@@ -24,11 +34,23 @@ class Register extends Component {
         axios
             .post('/encrypt', this.state)
             .then((res) => {
-              
+                this.setState({ warning: false })
                 location.href = "/#/Login"
-                // console.log(res);
+            }) // console.log(res);
+            .catch((err) => {
+                console.log('in catch')
+                this.showAlert()
+                this.setState({
+                    warning: true
+                })
             })
-    }
+    };
+    showAlert() {
+        this.msg.error('Registration Unsuccessful, Username unavailable'), {
+            time: 2000,
+            type: 'error',
+        }
+    };
     txtFieldChange(e) {
         if (e.target.name === 'username') {
             this.setState({
@@ -72,7 +94,7 @@ class Register extends Component {
                                             name="password" />
                                     </div>
                                     <div className="form-group">
-                                        
+                                        <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
                                         <button className="btn btn primary">Register</button>
 
                                     </div>

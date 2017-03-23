@@ -49,7 +49,10 @@ app.post('/encrypt', (req, res) => {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(password, salt, (err, hash) => {
             // Store hash in your password DB. 
-            if (err) console.log(err);
+            if (err){
+                res.status(403)
+                    .json({err})
+            }
             let newUser = User({
                 username: username,
                 password: hash,
