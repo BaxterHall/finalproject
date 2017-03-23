@@ -11,7 +11,7 @@ class Register extends Component {
         this.state = {
             username: null,
             password: null,
-            warning: null
+            warning: false,
             // email: null,
         };
         this.formSubmit = this.formSubmit.bind(this);
@@ -47,7 +47,7 @@ class Register extends Component {
     };
     showAlert() {
         this.msg.error('Registration Unsuccessful, Username unavailable'), {
-            time: 2000,
+            time: 3000,
             type: 'error',
         }
     };
