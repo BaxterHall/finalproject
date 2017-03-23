@@ -52,7 +52,7 @@ class UserPage extends Component {
                 //     groceryList: newGroceries,
                 //     loaded: true,
                 // })
-                location.href = '/UserPage'
+                location.href = '/#/UserPage'
             })
     };
     passId(recipeId) {
