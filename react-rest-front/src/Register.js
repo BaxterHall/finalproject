@@ -25,7 +25,7 @@ class Register extends Component {
             .post('http://localhost:3005/encrypt', this.state)
             .then((res) => {
               
-                location.href = "http://localhost:3000/login"
+                location.href = "/Login"
                 // console.log(res);
             })
     }

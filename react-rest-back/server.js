@@ -1,15 +1,16 @@
 const express = require('express')
 const app = express();
 const request = require('request')
-const PORT = 3005;
+const PORT = process.env.PORT || 8080
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 // EXPRESS
-app.listen(PORT, () => {
-    console.log('Server Started on http://localhost:%s', PORT);
-    console.log('Press CTRL + C to stop server');
+app.listen(PORT,() => {
+	console.log("Listening on Port:%s",PORT)
+	console.log("Stop with Ctrl+C");
 });
 // express.static
+   app.use(express.static(__dirname + './../build'));
 
 
 // BODYPARSER
@@ -22,7 +23,7 @@ const db = mongoose.connection;
 const User = require('./userinformation/username');
 const Groceries = require('./userinformation/grocerylist');
 const authorize = require('./middleware/authorize');
-mongoose.connect('mongodb://localhost/data/db/');
+mongoose.connect('mongodb://Baxter:Radiohead89@ds161099.mlab.com:61099/dinnerapp');
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log("Connected to db at /data/db/")

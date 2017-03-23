@@ -142,7 +142,7 @@ body {
   padding-top: 300px;
 }
 /*Search Page*/
-.home {
+.search {
   text-align: center;
 }
 .searchHeader{
@@ -162,6 +162,14 @@ body {
   font-variant: small-caps;
   text-shadow: 2px 3px 2px black;
 }
+.searchTitle{
+  padding-top: 20%;
+  text-align:center;
+  color: white;
+  font-variant: small-caps;
+  font-size: 65px;
+   text-shadow: 2px 3px 2px black;
+}
 .searchImage{
   height: 80%;
   width: 80%;
@@ -172,8 +180,13 @@ body {
 .searchtext{
   text-align:center;
 }
-#searchBar{
+.searchBar{
   text-align:center;
+  height: 27px;
+}
+.submitbutton{
+  height:27px;
+  
 }
 /*RecipePage*/
 .recipe-header{
@@ -242,4 +255,7 @@ a{
   padding-top: 170px;
   font-variant: small-caps;
   text-shadow: 2px 3px 2px black;
+}
+.empty{
+  text-align:center;
 }

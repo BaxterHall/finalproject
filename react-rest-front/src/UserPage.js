@@ -53,7 +53,7 @@ class UserPage extends Component {
                 //     groceryList: newGroceries,
                 //     loaded: true,
                 // })
-                location.href = './UserPage'
+                location.href = '/UserPage'
             })
     };
     passId(recipeId) {
@@ -138,7 +138,7 @@ class UserPage extends Component {
                         <div className='row'>
                             <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
                                 <h2 className='empty'>Your Cart Is Empty</h2>
-                                <h2 className='empty2'>Time To Start Shopping</h2>
+                                <h2 className='empty'>Time To Start Shopping</h2>
                                 
                             </div>
                         </div>

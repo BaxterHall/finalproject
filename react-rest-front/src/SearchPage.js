@@ -10,10 +10,10 @@ class SearchPage extends Component {
     }
     render() {
         return (
-      <div className="App">
+      <div className="search">
         <div className="searchHeader">
           <Navbar />
-          <h2 className="dinnertitle">What Should You Make For Dinner?</h2>
+          <h2 className="searchTitle">What Should You Make For Dinner?</h2>
         </div>
         <Search />
         <div className='container'>

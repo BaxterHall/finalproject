@@ -44,7 +44,7 @@ class Login extends Component {
                     })
                     localStorage.authToken = res.data.token;
                     localStorage.username = res.data.username
-                    location.href = "http://localhost:3000/UserPage";
+                    location.href = "/UserPage";
                 }
             })
             .catch((err) => {

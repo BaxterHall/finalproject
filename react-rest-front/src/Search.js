@@ -15,7 +15,7 @@ class Search extends Component {
 getResults(event, value) {
     event.preventDefault()
         localStorage.value = value
-        location.href = './SearchResults'
+        location.href = '/SearchResults'
         
         event.target.value = "";
 }
@@ -24,7 +24,7 @@ render() {
         <div className='container'>
             <div className='row'>
                 <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
-                    <h1 className="search">Lets Find Out What You Need</h1>
+                    <h1 className="search">Lets Find What You Need</h1>
                     <form onSubmit={(event) => { this.getResults(event, this.refs.query.value) }}>
                         <input className='searchBar' type='text' placeholder="What Do You You Have?" ref='query' />
                         <input className='submitbutton' type='submit' value="Bon Appetit!" />

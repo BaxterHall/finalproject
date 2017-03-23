@@ -72,7 +72,7 @@ class Recipe extends Component {
                 localStorage.groceryList = res.data.groceryList
                 localStorage.recipeTitle = res.data.recipeTitle
             })
-        location.href = "http://localhost:3000/UserPage";
+        location.href = "/UserPage";
     };
     render() {
         let loading;
