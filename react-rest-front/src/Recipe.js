@@ -138,7 +138,7 @@ class Recipe extends Component {
                                 <h2 className='whattobuy'>Check What You Need </h2>
                                 <h3 className='ingredList'>Ingredients:</h3>
                                 {thingsToCook}
-                                <h1 className='register'>Please Register To Save Your List</h1>
+                                <h1 className='plzsave'>Please Register To Save Your List</h1>
                             </div>
                         </div>
                     </div>
