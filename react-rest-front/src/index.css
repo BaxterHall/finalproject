@@ -163,12 +163,7 @@ body {
   text-shadow: 2px 3px 2px black;
 }
 .searchTitle{
-  padding-top: 20%;
-  text-align:center;
-  color: white;
-  font-variant: small-caps;
-  font-size: 65px;
-   text-shadow: 2px 3px 2px black;
+ text-align:center;
 }
 .searchImage{
   height: 80%;
@@ -180,7 +175,7 @@ body {
 .searchtext{
   text-align:center;
 }
-.searchBar{
+#searchBar{
   text-align:center;
   height: 27px;
 }
