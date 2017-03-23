@@ -36,7 +36,7 @@ class Login extends Component {
     formSubmit(e) {
         e.preventDefault();
         axios
-            .post('http://localhost:3005/login', this.state)
+            .post('/login', this.state)
             .then((res) => {
                 if (res.status === 200) {
                     this.setState({

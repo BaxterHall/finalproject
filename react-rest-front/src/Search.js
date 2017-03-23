@@ -15,7 +15,7 @@ class Search extends Component {
 getResults(event, value) {
     event.preventDefault()
         localStorage.value = value
-        location.href = '/SearchResults'
+        location.href = 'http://35.163.170.51/SearchResults'
         
         event.target.value = "";
 }

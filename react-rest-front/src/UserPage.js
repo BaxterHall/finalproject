@@ -19,7 +19,7 @@ class UserPage extends Component {
     componentDidMount() {
         // get all reviews
         axios
-            .get('http://localhost:3005/groceries/' + localStorage.username)
+            .get('/groceries/' + localStorage.username)
             .then(response => {
                 // console.log(response.data)
                let groceries = response.data
@@ -39,7 +39,7 @@ class UserPage extends Component {
     deleteItem(recipeId) {
         // console.log(recipeId)
         axios
-            .delete('http://localhost:3005/groceries/' + localStorage.username + "/" + recipeId)
+            .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
                 // console.log(response)
                 

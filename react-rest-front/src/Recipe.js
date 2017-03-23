@@ -20,7 +20,7 @@ class Recipe extends Component {
         this.saveList = this.saveList.bind(this)
     };
     componentWillMount() {
-        axios.get('http://localhost:3005/verify', { headers: { authorization: localStorage.authToken } })
+        axios.get('/verify', { headers: { authorization: localStorage.authToken } })
             .then((res) => {
                 // console.log(res.status)
                 if (res.status === 200) {
@@ -30,7 +30,7 @@ class Recipe extends Component {
                     this.state = { loggedIn: false }
                 }
             })
-        axios.get('http://localhost:3005/recipe/' + localStorage.id)
+        axios.get('/recipe/' + localStorage.id)
             .then(response => {
                 // console.log(response.data.newRecipe)
                 this.setState({
@@ -66,7 +66,7 @@ class Recipe extends Component {
     };
     saveList() {
         axios
-            .post('http://localhost:3005/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
+            .post('/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
             .then((res) => {
                 localStorage.groceryList = res.data.groceryList
                 localStorage.recipeTitle = res.data.recipeTitle

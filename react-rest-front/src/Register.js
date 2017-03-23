@@ -22,7 +22,7 @@ class Register extends Component {
     formSubmit(e) {
         e.preventDefault();
         axios
-            .post('http://localhost:3005/encrypt', this.state)
+            .post('/encrypt', this.state)
             .then((res) => {
               
                 location.href = "/Login"
