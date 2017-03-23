@@ -14,7 +14,7 @@ class SearchResults extends Component {
         this.getRecipe = this.getRecipe.bind(this)
     };
     componentWillMount() {
-        axios.get('http://localhost:3005/search/' + localStorage.value)
+        axios.get('/search/' + localStorage.value)
             .then(response => {
             // console.log(localStorage)
                 this.setState({
@@ -28,12 +28,12 @@ class SearchResults extends Component {
     searchAgain(event, value) {
         event.preventDefault()
         localStorage.value = value
-        location.href = './SearchResults'
+        location.href = '/#/SearchResults'
         event.target.value = "";
     };
     getRecipe(recipes_id) {
         localStorage.id = recipes_id
-        location.href = './Recipe'
+        location.href = '/#/Recipe'
     };
     render() {
         let searchResults = this.state.searchedRecipes.map((recipes) => {

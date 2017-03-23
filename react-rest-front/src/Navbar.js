@@ -14,7 +14,7 @@ class Navbar extends Component {
     componentWillMount() {
         // console.log('mounting')
         // console.log(localStorage.authToken)
-        axios.get('http://localhost:3005/verify', { headers: { authorization: localStorage.authToken } })
+        axios.get('/verify', { headers: { authorization: localStorage.authToken } })
             .then((res) => {
                 // console.log(res.status)
                 if (res.status === 200) {
@@ -28,7 +28,7 @@ class Navbar extends Component {
     logOut() {
         this.setState({ loggedIn: false })
         localStorage.clear()
-        location.href = "http://localhost:3000";
+        location.href = "/";
     };
     render() {
         let moreThings;
