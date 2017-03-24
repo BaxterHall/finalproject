@@ -21,7 +21,7 @@ class Register extends Component {
             offset: 15,
             position: 'top right',
             theme: 'dark',
-            time: 5000,
+            time: 1000,
             transition: 'fade'
         };
     };

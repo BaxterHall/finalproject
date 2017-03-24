@@ -4,20 +4,14 @@ import './index.css';
 class Search extends Component {
     constructor() {
         super();
-        // this.state = {
-        //     value: ""
-        // }
-     
-        this.getResults = this.getResults.bind(this)
-    
-}
+        this.getResults = this.getResults.bind(this)   
+};
 
 getResults(event, value) {
     event.preventDefault()
         localStorage.value = value
-        location.href = '/#/SearchResults'
+        location.href = '/#/SearchResults'       
         
-        event.target.value = "";
 }
 render() {
     return (
