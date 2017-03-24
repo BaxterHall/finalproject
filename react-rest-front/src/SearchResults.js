@@ -25,7 +25,7 @@ class SearchResults extends Component {
         document.title = "Search Results"
     }
     searchAgain(event, value) {
-        event.preventDefault()
+
         localStorage.value = value
         location.href = '/#/SearchResults'
         event.target.value = "";

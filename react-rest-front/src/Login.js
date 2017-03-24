@@ -20,7 +20,7 @@ class Login extends Component {
             offset: 15,
             position: 'top right',
             theme: 'dark',
-            time: 1000,
+            time: 500,
             transition: 'fade'
         };
     };
