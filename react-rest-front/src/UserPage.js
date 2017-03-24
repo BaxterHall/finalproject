@@ -128,6 +128,7 @@ class UserPage extends Component {
         }
         else{
             return (
+            loading =
                 <div>
                     <div className="userHeader">
                         <Navbar />
