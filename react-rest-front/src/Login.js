@@ -38,6 +38,7 @@ class Login extends Component {
         axios
             .post('/login', this.state)
             .then((res) => {
+                console.log(res.status)
                 if (res.status === 200) {
                     this.setState({
                         warning: false
