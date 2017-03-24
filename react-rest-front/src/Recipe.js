@@ -70,7 +70,8 @@ class Recipe extends Component {
             .then((res) => {
                 localStorage.groceryList = res.data.groceryList
                 localStorage.recipeTitle = res.data.recipeTitle
-                location.href = "www.whatscookin.website/#/UserPage"
+                res.redirect("/#/UserPage")
+                location.assign("/#/UserPage")
             })
        
     };
