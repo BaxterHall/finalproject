@@ -12,7 +12,6 @@ class Register extends Component {
             username: null,
             password: null,
             warning: null
-            // email: null,
         };
         this.formSubmit = this.formSubmit.bind(this);
         this.txtFieldChange = this.txtFieldChange.bind(this);
@@ -25,10 +24,15 @@ class Register extends Component {
             transition: 'fade'
         };
     };
+    showAlert() {
+        this.msg.error('Registration Unsuccessful, Username unavailable'), {
+            time: 1000,
+            type: 'error',
+        }
+    };
     componentWillMount() {
         document.title = "Register"
-    }
-
+    };
     formSubmit(e) {
         e.preventDefault();
         axios
@@ -38,22 +42,13 @@ class Register extends Component {
                     this.setState({ warning: false })
                     location.href = "/#/Login"
                 }
-                else if (!res.status === 200) {
-                    this.showAlert()
-                    this.setState({
-                        warning: true
-                    })
-                }
             })
             .catch((err) => {
-                // console.log('in catch')
+                this.showAlert()
+                this.setState({
+                    warning: true
+                })
             })
-    };
-    showAlert() {
-       this.msg.show('Registration Unsuccessful, Username unavailable'), {
-            time: 1000,
-            type: 'error',
-        }
     };
     txtFieldChange(e) {
         if (e.target.name === 'username') {
@@ -67,7 +62,6 @@ class Register extends Component {
             })
         }
     };
-
     render() {
         return (
             <div className='register'>
@@ -100,11 +94,9 @@ class Register extends Component {
                                     <div className="form-group">
                                         <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
                                         <button className="btn btn-primary">Register</button>
-
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ class Login extends Component {
         document.title = "Login"
     };
     showAlert() {
-        this.msg.show('Login Unsuccessful, Please Try Again'), {
+        this.msg.error('Login Unsuccessful, Please Try Again'), {
             time: 1000,
             type: 'error',
         }
@@ -38,7 +38,6 @@ class Login extends Component {
         axios
             .post('/login', this.state)
             .then((res) => {
-                console.log(res)
                 if (res.status === 200) {
                     this.setState({
                         warning: false
@@ -47,17 +46,9 @@ class Login extends Component {
                     localStorage.username = res.data.username
                     location.href = "/#/UserPage";
                 }
-                else if (res.status === 403) {
-                    console.log('in the else if')
-                    this.showAlert()
-                    this.setState({
-                        warning: true
-                    })
-                }
+               
             })
             .catch((err) => {
-                console.log(err)
-                console.log('in catch')
                 this.showAlert()
                 this.setState({
                     warning: true

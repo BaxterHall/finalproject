@@ -12,19 +12,15 @@ class Navbar extends Component {
         this.logOut = this.logOut.bind(this)
     };
     componentWillMount() {
-        // console.log('mounting')
-        // console.log(localStorage.authToken)
         if (localStorage.authToken) {
             axios.get('/verify', { headers: { authorization: localStorage.authToken } })
                 .then((res) => {
-                    // console.log(res.status)
                     this.setState({ loggedIn: true })
                 });
         }
         else if (!localStorage.authToken) {
             this.state = { loggedIn: false }
         }
-
     };
     logOut() {
         this.setState({ loggedIn: false })

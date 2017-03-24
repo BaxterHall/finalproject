@@ -22,7 +22,6 @@ class Recipe extends Component {
     componentWillMount() {
         axios.get('/verify', { headers: { authorization: localStorage.authToken } })
             .then((res) => {
-                // console.log(res.status)
                 if (res.status === 200) {
                     this.setState({ loggedIn: true })
                 }
@@ -32,13 +31,11 @@ class Recipe extends Component {
             })
         axios.get('/recipe/' + localStorage.id)
             .then(response => {
-                // console.log(response.data.newRecipe)
                 this.setState({
                     recipe: response.data.recipe,
                     ingredients: response.data.newRecipe,
                     loaded: true,
                 })
-                // console.log(this.state.recipe)
             })
         document.title = "Your Recipe"
     };
@@ -55,8 +52,6 @@ class Recipe extends Component {
             this.state.ingredients[i].need = false;
             let removeItemIndex = this.state.ingredients.indexOf({ i })
             this.state.ingredients.splice(removeItemIndex)
-            // console.log('this is the removed item')
-            // console.log(removeItemIndex)
             this.setState({
                 ingredients: this.state.ingredients
             })
@@ -70,7 +65,6 @@ class Recipe extends Component {
             .then((res) => {
                 localStorage.groceryList = res.data.groceryList
                 localStorage.recipeTitle = res.data.recipeTitle
-                // res.redirect("/#/UserPage")
                 location.assign("/#/UserPage")
             })
 
@@ -82,7 +76,7 @@ class Recipe extends Component {
         }
         else if (this.state.loaded && this.state.loggedIn) {
             let thingsToCook = this.state.ingredients.map((ingredient, i) => {
-                if (ingredient.ingredients.includes("Instructions")){
+                if (ingredient.ingredients.includes("Instructions")) {
                     return (null)
                 }
                 else {
@@ -113,7 +107,7 @@ class Recipe extends Component {
                                 <h3 className='ingredList'>Ingredients:</h3>
                                 {thingsToCook}
                                 <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
-                                <button className="btn btn-primary" onClick={() => this.saveList()}>Save Your List</button>
+                                    <button className="btn btn-primary" onClick={() => this.saveList()}>Save Your List</button>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +141,7 @@ class Recipe extends Component {
                                 <h3 className='ingredList'>Ingredients:</h3>
                                 {thingsToCook}
                                 <div>
-                                <h1 className='plzlogin'>Please Register To Save Your List</h1>
+                                    <h1 className='plzlogin'>Please Register To Save Your List</h1>
                                 </div>
                             </div>
                         </div>

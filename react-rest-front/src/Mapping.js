@@ -8,7 +8,6 @@ class Recipes extends Component {
             if (!ingredient.need) {
                 return ingredient
             }
-            // console.log(ingredient)
         }).map((ingredient, i) => {
             return (
                 <div key={i}>
@@ -31,7 +30,6 @@ class Recipes extends Component {
                 </div>
             )
         });
-        // console.log(this.props.recipeId)
         return (
             <div className='previousLists'>
                 <h3>{this.props.title}</h3>

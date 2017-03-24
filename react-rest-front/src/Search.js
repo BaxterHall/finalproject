@@ -11,7 +11,6 @@ class Search extends Component {
         e.preventDefault()
         localStorage.value = value;
         location.href = '/#/SearchResults';
-
     }
     render() {
         return (

@@ -15,7 +15,6 @@ class SearchResults extends Component {
     componentWillMount() {
         axios.get('/search/' + localStorage.value)
             .then(response => {
-            // console.log(localStorage)
                 this.setState({
                     searchedRecipes: response.data.recipes
                 })
@@ -62,5 +61,4 @@ class SearchResults extends Component {
         )
     }
 };
-
 export default SearchResults;

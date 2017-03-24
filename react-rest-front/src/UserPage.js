@@ -21,13 +21,10 @@ class UserPage extends Component {
         axios
             .get('/groceries/' + localStorage.username)
             .then(response => {
-                // console.log(response.data)
                 let groceries = response.data
-                // console.log(groceries)
                 let newGroceries = groceries.map(grocery => {
                     return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
                 })
-                // console.log(newGroceries)
                 this.setState({
                     groceryList: newGroceries,
                     loaded: true,
@@ -39,20 +36,16 @@ class UserPage extends Component {
         }
     };
     deleteItem(recipeId) {
-        // console.log(recipeId)
         axios
             .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
                 axios
                     .get('/groceries/' + localStorage.username)
                     .then(response => {
-                        // console.log(response.data)
                         let groceries = response.data
-                        // console.log(groceries)
                         let newGroceries = groceries.map(grocery => {
                             return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
                         })
-                        // console.log(newGroceries)
                         this.setState({
                             groceryList: newGroceries,
                             loaded: true,
@@ -117,7 +110,6 @@ class UserPage extends Component {
                     <Recipes recipeId={Recipe.recipe_id} key={i} title={Recipe.title} ingredients={Recipe.ingredient} deleteItem={this.deleteItem} />
                 )
             })
-            // console.log(previousRecipes)
             return (
                 viewCart =
                 <div>
