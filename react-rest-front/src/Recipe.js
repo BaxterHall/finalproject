@@ -39,16 +39,6 @@ class Recipe extends Component {
             })
         document.title = "Your Recipe"
     };
-    componentWillUnmount(){
-
-        if(localStorage.groceryList === undefined){
-            console.log('its working')
-            localStorage.groceryList = JSON.stringify(this.state.ingredients)
-            localStorage.recipeTitle = JSON.stringify(this.state.recipe.title)
-            this.saveList();
-        }
-
-    }
     checkHandler(event, i) {
         if (event.target.checked) {
             this.state.ingredients[i].need = true;
@@ -71,14 +61,30 @@ class Recipe extends Component {
     };
     saveList() {
         alert("savelist")
-        axios
-            .post('/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
-            .then((res) => {
-                localStorage.groceryList = res.data.groceryList
-                localStorage.recipeTitle = res.data.recipeTitle
-                location.assign("/#/UserPage")
-            })
 
+        if (localStorage.groceryList === undefined) {
+            // console.log('its working')
+            localStorage.groceryList = JSON.stringify(this.state.ingredients)
+            localStorage.recipeTitle = JSON.stringify(this.state.recipe.title)
+            this.saveList();
+
+            axios
+                .post('/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
+                .then((res) => {
+                    localStorage.groceryList = res.data.groceryList
+                    localStorage.recipeTitle = res.data.recipeTitle
+                    location.assign("/#/UserPage")
+                })
+        }
+        else {
+            axios
+                .post('/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
+                .then((res) => {
+                    localStorage.groceryList = res.data.groceryList
+                    localStorage.recipeTitle = res.data.recipeTitle
+                    location.assign("/#/UserPage")
+                })
+        }
     };
     render() {
         let findTheRecipe;
