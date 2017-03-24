@@ -70,6 +70,7 @@ class Recipe extends Component {
         localStorage.groceryList = JSON.stringify(this.state.ingredients)
     };
     saveList() {
+        alert("savelist")
         axios
             .post('/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
             .then((res) => {
