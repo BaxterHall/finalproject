@@ -47,7 +47,7 @@ class Register extends Component {
     };
     showAlert() {
         this.msg.error('Registration Unsuccessful, Username unavailable'), {
-            time: 1000,
+            time: 500,
             type: 'error',
         }
     };

@@ -23,11 +23,11 @@ class UserPage extends Component {
             .then(response => {
                 // console.log(response.data)
                 let groceries = response.data
-                console.log(groceries)
+                // console.log(groceries)
                 let newGroceries = groceries.map(grocery => {
                     return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
                 })
-                console.log(newGroceries)
+                // console.log(newGroceries)
                 this.setState({
                     groceryList: newGroceries,
                     loaded: true,

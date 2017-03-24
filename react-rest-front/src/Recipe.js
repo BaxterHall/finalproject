@@ -95,7 +95,7 @@ class Recipe extends Component {
                 <div className='recipebody'>
                     <div className="recipe-header">
                         <Navbar />
-                        <a href="/#/SearchResults"><button className="btn btn-primary" >Back To Search Results</button></a>
+                        <a href="/#/SearchResults"><button className="btn btn primary" >Back To Search Results</button></a>
                         <h2 className='recipe-result'>{this.state.recipe.title}</h2>
                         <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
                             <img className='recipeImage' src={this.state.recipe.image_url} alt="recipephoto" />
