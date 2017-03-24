@@ -38,7 +38,7 @@ class SearchResults extends Component {
             return (
                 <div key={recipes.recipe_id} className='col-md-4 col-sm-6 col-xs-12' onClick={() => this.getRecipe(recipes.recipe_id)}>
                     <h6 className='searchTitle'>{recipes.title}</h6>
-                    <img className='searchImage' src={recipes.image_url} alt="recipephoto" />
+                    <img className='searchImage col-xs-10 col-xs-offset-1' src={recipes.image_url} alt="recipephoto" />
                 </div>
             )
         });

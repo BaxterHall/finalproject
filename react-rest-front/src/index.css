@@ -222,10 +222,9 @@ body {
   text-align:center;
 }
 .secondHomeTitle{
-  padding-top: 180px;
+  padding-top: 130px;
   color: white;
-  font-size: 65px;
-  text-align:center;
+  font-size: 55px;
   font-variant: small-caps;
   text-shadow: 2px 3px 2px black;
   text-align: center;
@@ -258,8 +257,12 @@ a{
  display: inline;
  padding: 20px;
 }
+.whattobuy{
+  text-align:center;
+}
 .ingredList{
   text-decoration: underline;
+  text-align:center;
 }
 .recipe-ingred{
   padding: 20px;
@@ -323,14 +326,20 @@ a{
 /*buttons*/
 
 .btn-primary {
-    color: black;
-    background-color: darkgrey;
-    border-color: black
+  color: black;
+  background-color: darkgrey;
+  border-color: black
 }
 .btn-primary:hover {
-    color: darkgrey;
-    background-color: black;
-    border-color: black
+  color: darkgrey;
+  background-color: black;
+  border-color: black
+}
+.btn-primary:active{
+  color: black;
+  background-color: darkgrey;
+  border-color: black
+
 }
 
 .inputform{

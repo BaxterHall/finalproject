@@ -30,7 +30,7 @@ class Login extends Component {
     showAlert() {
         this.msg.error('Login Unsuccessful, Please Try Again'), {
             time: 1000,
-            type: 'error',       
+            type: 'error',
         }
     };
     formSubmit(e) {
@@ -46,13 +46,15 @@ class Login extends Component {
                     localStorage.username = res.data.username
                     location.href = "/#/UserPage";
                 }
+                else if (res.status === 403) {
+                    this.showAlert()
+                    this.setState({
+                        warning: true
+                    })
+                }
             })
             .catch((err) => {
                 // console.log('in catch')
-                this.showAlert()
-                this.setState({
-                    warning: true
-                })              
             })
     };
     txtFieldChange(e) {

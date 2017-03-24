@@ -34,15 +34,19 @@ class Register extends Component {
         axios
             .post('/encrypt', this.state)
             .then((res) => {
-                this.setState({ warning: false })
-                location.href = "/#/Login"
-            }) // console.log(res);
+                if (res.status === 200) {
+                    this.setState({ warning: false })
+                    location.href = "/#/Login"
+                }
+                else if (res.status === 403) {
+                    this.showAlert()
+                    this.setState({
+                        warning: true
+                    })
+                }
+            })
             .catch((err) => {
-                console.log('in catch')
-                this.showAlert()
-                this.setState({
-                    warning: true
-                })
+                // console.log('in catch')
             })
     };
     showAlert() {

@@ -112,7 +112,7 @@ class Recipe extends Component {
                                 <h2 className='whattobuy'>Check What You Need </h2>
                                 <h3 className='ingredList'>Ingredients:</h3>
                                 {thingsToCook}
-                                <div>
+                                <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
                                 <button className="btn btn-primary" onClick={() => this.saveList()}>Save Your List</button>
                                 </div>
                             </div>
