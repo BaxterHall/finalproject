@@ -124,6 +124,7 @@ class UserPage extends Component {
         }
         else {
             return (
+                loading =
                 <div>
                     <div className="userHeader">
                         <Navbar />
@@ -143,9 +144,7 @@ class UserPage extends Component {
         }
         return (
             <div className='userBody'>
-
                 {loading}
-
             </div>
         )
     }

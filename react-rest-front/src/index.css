@@ -85,7 +85,7 @@ body {
 .homeHeader {
   height: 500px;
   padding: 20px;
-  background-image:url('../public/images/background.jpeg');
+  background-image:url('../public/images/background.jpg');
   background-size:cover;
   background-repeat: none;
   background-position: 50% 45%; 
@@ -103,7 +103,7 @@ body {
 }
 /*Registration Page*/
 .register{
-  background-image: url('../public/images/cooking.jpg');
+  background-image: url('../public/images/register.jpg');
   background-size:cover;
   background-repeat: none;
   background-position: 50% 45%; 
@@ -146,7 +146,7 @@ body {
   text-align: center;
 }
 .searchHeader{
-  background-image: url('../public/images/searchpage.jpeg');
+  background-image: url('../public/images/searchpage.jpg');
   background-size:cover;
   background-repeat: none;
   background-position: 40% 65%;
@@ -263,7 +263,7 @@ a{
   text-align:center;
 }
 .results-header{
-  background-image: url('../public/images/searchpage.jpeg');
+  background-image: url('../public/images/secondsearch.jpg');
   background-size:cover;
   background-repeat: none;
   background-position: 40% 65%;

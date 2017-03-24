@@ -18,4 +18,4 @@ ReactDOM.render(<Router history={hashHistory}>
   <Route path='/Recipe' component={Recipe}/>
   <Route path='/SearchPage' component={SearchPage}/>
   <Route path='/UserPage' component={UserPage}/>
-</Router>, document.getElementById('root'));
+</Router>, document.getElementById('app'));
