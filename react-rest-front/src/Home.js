@@ -13,7 +13,6 @@ class Home extends Component {
       <div className="home">
         <div className="homeHeader">
           <Navbar />
-          <h1 className="homeBigTitle">Whats Cookin?</h1>
           <h2 className="homeTitle">What Do You Need To Make Dinner?</h2>
         </div>
         <Search />

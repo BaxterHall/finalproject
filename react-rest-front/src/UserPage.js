@@ -40,7 +40,7 @@ class UserPage extends Component {
         axios
             .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
-                this.forceUpdate()
+               location.href ="www.whatscookin.website/#/UserPage"
                 // // console.log(response)
                 
                 // let groc = response.data
@@ -111,7 +111,7 @@ class UserPage extends Component {
                     <div className='container'>
                         <div className='row'>
                             <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
-                            <a href="/#/SearchResults/"><button className='cart-back'>Back To Search Results</button></a>
+                            <a href="/#/SearchResults/"><button className='btn btn primary'>Back To Search Results</button></a>
                                 <h2 className='newrecipeList'>Your Most Recent Recipe</h2>
                                 <h3>{this.state.groceryList[mostRecent].title}</h3>
                                 <h4 className='needList'>What You Need To Purchase</h4>

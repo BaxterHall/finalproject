@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {hashHistory} from 'react-router'
 import axios from 'axios';
 import Navbar from './Navbar'
 import './index.css';
@@ -71,7 +70,7 @@ class Recipe extends Component {
             .then((res) => {
                 localStorage.groceryList = res.data.groceryList
                 localStorage.recipeTitle = res.data.recipeTitle
-                hashHistory.push('/#/UserPage')
+                location.href = "www.whatscookin.website/#/UserPage"
             })
        
     };
