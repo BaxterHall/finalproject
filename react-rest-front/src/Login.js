@@ -32,7 +32,7 @@ class Login extends Component {
             time: 1000,
             type: 'error',  
             offset: 15,
-            position: 'top right',
+            position: 'bottom right',
             theme: 'dark',
             transition: 'fade'
         }
@@ -50,7 +50,7 @@ class Login extends Component {
                     localStorage.username = res.data.username
                     location.href = "/#/UserPage";
                 }
-                else if (res.status === 403) {
+                else if (!res.status === 200) {
                     this.showAlert()
                     this.setState({
                         warning: true

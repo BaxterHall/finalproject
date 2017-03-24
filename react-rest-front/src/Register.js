@@ -19,7 +19,7 @@ class Register extends Component {
         this.showAlert = this.showAlert.bind(this);
         this.alertOption = {
             offset: 15,
-            position: 'top right',
+            position: 'bottom right',
             theme: 'dark',
             time: 1000,
             transition: 'fade'
@@ -38,7 +38,7 @@ class Register extends Component {
                     this.setState({ warning: false })
                     location.href = "/#/Login"
                 }
-                else if (res.status === 403) {
+                else if (!res.status === 200) {
                     this.showAlert()
                     this.setState({
                         warning: true
