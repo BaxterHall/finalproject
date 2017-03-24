@@ -46,7 +46,7 @@ class Login extends Component {
                     localStorage.username = res.data.username
                     location.href = "/#/UserPage";
                 }
-                else if (!res.status === 200) {
+                else if (res.status === 403) {
                     this.showAlert()
                     this.setState({
                         warning: true
