@@ -16,7 +16,7 @@ class UserPage extends Component {
         this.deleteItem = this.deleteItem.bind(this)
         this.passId = this.passId.bind(this)
     };
-    componentWillMount() { 
+    componentWillMount() {
         // get all grocery items
         axios
             .get('/groceries/' + localStorage.username)
@@ -40,17 +40,21 @@ class UserPage extends Component {
         axios
             .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
-                location.href = "/#/UserPage"
-                // // console.log(response)
-                // let groc = response.data
-                // let newGroceries = groc.map(grocery => {
-                //     return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
-                // })
-                // // console.log(newGroceries)
-                // this.setState({
-                //     groceryList: newGroceries,
-                //     loaded: true,
-                // })
+                axios
+                    .get('/groceries/' + localStorage.username)
+                    .then(response => {
+                        // console.log(response.data)
+                        let groceries = response.data
+                        // console.log(groceries)
+                        let newGroceries = groceries.map(grocery => {
+                            return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
+                        })
+                        // console.log(newGroceries)
+                        this.setState({
+                            groceryList: newGroceries,
+                            loaded: true,
+                        })
+                    })
             })
     };
     passId(recipeId) {
