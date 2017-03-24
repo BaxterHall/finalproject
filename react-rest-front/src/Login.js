@@ -47,6 +47,7 @@ class Login extends Component {
                     location.href = "/#/UserPage";
                 }
                 else if (res.status === 403) {
+                    console.log('in the else if')
                     this.showAlert()
                     this.setState({
                         warning: true
@@ -54,7 +55,12 @@ class Login extends Component {
                 }
             })
             .catch((err) => {
-                // console.log('in catch')
+
+                console.log('in catch')
+                this.showAlert()
+                this.setState({
+                    warning: true
+                })
             })
     };
     txtFieldChange(e) {
