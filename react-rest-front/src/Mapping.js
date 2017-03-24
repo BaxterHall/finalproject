@@ -39,7 +39,7 @@ class Recipes extends Component {
                 {needIngredients}
                 <h4>Ingredients You Have</h4>
                 {dontNeedIngredients}
-                <button className='btn btn primary' onClick={() => {this.props.deleteItem(this.props.recipeId)}}>Remove Recipe</button>
+                <button className='btn btn-primary' onClick={() => {this.props.deleteItem(this.props.recipeId)}}>Remove Recipe</button>
             </div>
         )
     }

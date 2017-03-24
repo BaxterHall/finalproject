@@ -25,7 +25,6 @@ class SearchResults extends Component {
         document.title = "Search Results"
     }
     searchAgain(event, value) {
-        event.preventDefault()
         localStorage.value = value
         location.href = '/#/SearchResults'
         event.target.value = "";
@@ -37,7 +36,7 @@ class SearchResults extends Component {
     render() {
         let searchResults = this.state.searchedRecipes.map((recipes) => {
             return (
-                <div key={recipes.recipe_id} className='col-md-4 col-sm-6 col-xs-6' onClick={() => this.getRecipe(recipes.recipe_id)}>
+                <div key={recipes.recipe_id} className='col-md-4 col-sm-6 col-xs-12' onClick={() => this.getRecipe(recipes.recipe_id)}>
                     <h6 className='searchTitle'>{recipes.title}</h6>
                     <img className='searchImage' src={recipes.image_url} alt="recipephoto" />
                 </div>
@@ -51,10 +50,10 @@ class SearchResults extends Component {
                 </div>
                 <div className='container'>
                     <div className='row'>
-                        <h3 className='searchtext'>Find Anything You Like?</h3>
+                        <h3 className='searchtext'>See Anything You Like?</h3>
                         <form id='searchBar' onSubmit={(event) => { this.searchAgain(event, this.refs.query.value) }}>
                             <input type='text' placeholder="Search Again" ref='query' />
-                            <input className='submitbutton' type='submit' value="Bon Appetit!" />
+                            <button className='btn btn-primary' type='submit'>Bon Appetit!</button>
                         </form>
                     </div>
                     {searchResults}

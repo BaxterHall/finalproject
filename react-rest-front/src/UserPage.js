@@ -34,6 +34,9 @@ class UserPage extends Component {
                 })
             })
         document.title = "Your Cart"
+        if(!localStorage.authToken){
+            location.href('/')
+        }
     };
     deleteItem(recipeId) {
         // console.log(recipeId)
@@ -61,9 +64,23 @@ class UserPage extends Component {
         let recipe_id = this.props.recipeId;
     };
     render() {
-        let loading;
+        let viewCart;
         if (this.state.loaded === false) {
-            let loading = (<h1> loading... </h1>)
+            let viewCart = (<div>
+                <div className="userHeader">
+                    <Navbar />
+                    <h1 className='userTitle'>Hello {localStorage.username}</h1>
+                </div>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
+                            <h2 className='empty'>Your Cart Is Empty</h2>
+                            <h2 className='empty'>Time To Start Shopping</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>)
         }
         else if (this.state.loaded === true && this.state.groceryList.length > 0) {
             let mostRecent = this.state.groceryList.length - 1
@@ -102,7 +119,7 @@ class UserPage extends Component {
             })
             // console.log(previousRecipes)
             return (
-                loading =
+                viewCart =
                 <div>
                     <div className="userHeader">
                         <Navbar />
@@ -111,7 +128,7 @@ class UserPage extends Component {
                     <div className='container'>
                         <div className='row'>
                             <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
-                                <a href="/#/SearchResults/"><button className='btn btn primary'>Back To Search Results</button></a>
+                                <a href="/#/SearchResults/"><button className='btn btn-primary'>Back To Search Results</button></a>
                                 <h2 className='newrecipeList'>Your Most Recent Recipe</h2>
                                 <h3>{this.state.groceryList[mostRecent].title}</h3>
                                 <h4 className='needList'>What You Need To Purchase</h4>
@@ -128,7 +145,7 @@ class UserPage extends Component {
         }
         else if (this.state.loaded === true && this.state.groceryList.length === 0) {
             return (
-                loading =
+                viewCart =
                 <div>
                     <div className="userHeader">
                         <Navbar />
@@ -148,7 +165,7 @@ class UserPage extends Component {
         }
         return (
             <div className='userBody'>
-                {loading}
+                {viewCart}
             </div>
         )
     }

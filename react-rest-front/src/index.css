@@ -72,6 +72,46 @@ ul.topnav li a:hover {
   padding-left: 15px;
 }
 }
+@media(width:768px){
+    body{
+    height:1000px;
+  }
+  #app{
+    height: 1000px;
+  }
+  .home{
+    height:1000px;
+  }
+  #homeHeader {
+  height: 770px;
+  padding: 150px;
+  background-image:url('../public/images/background.jpg');
+  background-size:cover;
+  background-repeat: none;
+  background-position: 50% 45%; 
+  text-align: center;
+  }
+}
+@media(width: 1024px){
+  body{
+    height:1366px;
+  }
+  #app{
+    height: 1366px;
+  }
+  .home{
+    height:1366px;
+  }
+  #homeHeader {
+  height: 1000px;
+  padding: 290px;
+  background-image:url('../public/images/background.jpg');
+  background-size:cover;
+  background-repeat: none;
+  background-position: 50% 45%; 
+  text-align: center;
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -81,6 +121,7 @@ body {
 /*LandingPage*/
 .home {
   text-align: center;
+  
 }
 .homeHeader {
   height: 500px;
@@ -88,10 +129,12 @@ body {
   background-image:url('../public/images/background.jpg');
   background-size:cover;
   background-repeat: none;
-  background-position: 50% 45%; 
+  background-position: 50% 45%;
+  text-align: center;
+ 
 }
 .homeTitle{
-  padding-top: 20%;
+  padding-top: 18%;
   text-align:center;
   color: white;
   font-variant: small-caps;
@@ -108,9 +151,10 @@ body {
   background-repeat: none;
   background-position: 50% 45%; 
   height: 500px;
+  text-align: center;
 }
 .registration{
-  padding-top: 220px;
+  padding-top: 200px;
   color: white;
   font-size: 65px;
   text-align:center;
@@ -128,9 +172,10 @@ body {
   background-repeat: none;
   background-position: 50% 45%; 
   height: 500px;
+  text-align: center;
 }
 .loginForm{
-  padding-top: 120px;
+  padding-top: 100px;
   color: white;
   font-size: 65px;
   text-align:center; 
@@ -155,12 +200,13 @@ body {
   text-align:center;
 }
 .searchresults{
-  padding-top: 180px;
+  padding-top: 150px;
   color: white;
   font-size: 65px;
   text-align:center;
   font-variant: small-caps;
   text-shadow: 2px 3px 2px black;
+  text-align: center;
 }
 .searchTitle{
  text-align:center;
@@ -182,6 +228,7 @@ body {
   text-align:center;
   font-variant: small-caps;
   text-shadow: 2px 3px 2px black;
+  text-align: center;
 }
 #searchBar{
   text-align:center;
@@ -228,6 +275,7 @@ a{
   background-position: 40% 65%; 
   height: 500px;
   padding: 20px;
+  text-align: center;
 }
 .groceryTitle{
   color:white;
@@ -258,6 +306,7 @@ a{
   padding-top: 170px;
   font-variant: small-caps;
   text-shadow: 2px 3px 2px black;
+  text-align: center;
 }
 .empty{
   text-align:center;
@@ -270,4 +319,20 @@ a{
   height: 500px;
   padding: 20px;
   text-align:center;
+}
+/*buttons*/
+
+.btn-primary {
+    color: black;
+    background-color: darkgrey;
+    border-color: black
+}
+.btn-primary:hover {
+    color: darkgrey;
+    background-color: black;
+    border-color: black
+}
+
+.inputform{
+  text-align: center;
 }

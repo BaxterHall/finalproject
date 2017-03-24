@@ -14,16 +14,17 @@ class Navbar extends Component {
     componentWillMount() {
         // console.log('mounting')
         // console.log(localStorage.authToken)
-        axios.get('/verify', { headers: { authorization: localStorage.authToken } })
-            .then((res) => {
-                // console.log(res.status)
-                if (res.status === 200) {
+        if (localStorage.authToken) {
+            axios.get('/verify', { headers: { authorization: localStorage.authToken } })
+                .then((res) => {
+                    // console.log(res.status)
                     this.setState({ loggedIn: true })
-                }
-                else if (res.status === 403) {
-                    this.state = { loggedIn: false }
-                }
-            })
+                });
+        }
+        else if (!localStorage.authToken) {
+            this.state = { loggedIn: false }
+        }
+
     };
     logOut() {
         this.setState({ loggedIn: false })
@@ -37,7 +38,7 @@ class Navbar extends Component {
                 <nav className="navbar navbar-default navbar-fixed-top navbar-inverse">
                     <ul className="nav navbar-nav">
                         <li className="listText">Hello There {localStorage.username}</li>
-                        <li><Link to='/SearchPage'>Search For A Recipe</Link></li>                      
+                        <li><Link to='/SearchPage'>Search For A Recipe</Link></li>
                         <li><Link to='/UserPage'>Your Cart</Link></li>
                         <li className="listText" onClick={this.logOut}>Log Out </li>
                     </ul>

@@ -73,29 +73,34 @@ class Recipe extends Component {
                 // res.redirect("/#/UserPage")
                 location.assign("/#/UserPage")
             })
-       
+
     };
     render() {
-        let loading;
+        let findTheRecipe;
         if (!this.state.loaded) {
-            let loading = (<h1> loading... </h1>);
+            let findTheRecipe = (<h1> Just Hold On A Second, Things Are Moving A Little Slow</h1>);
         }
         else if (this.state.loaded && this.state.loggedIn) {
             let thingsToCook = this.state.ingredients.map((ingredient, i) => {
-                return (
-                    <div key={i}>
-                        <form>
-                            <input onChange={(event) => { this.checkHandler(event, i) }} className='checkbox-inline' type='checkbox' />
-                            <label id={i} className='recipe-ingred'>{ingredient.ingredients}</label>
-                        </form>
-                    </div>
-                )
+                if (ingredient.ingredients.includes("Instructions")){
+                    return (null)
+                }
+                else {
+                    return (
+                        <div key={i}>
+                            <form>
+                                <input onChange={(event) => { this.checkHandler(event, i) }} className='checkbox-inline' type='checkbox' />
+                                <label id={i} className='recipe-ingred'>{ingredient.ingredients}</label>
+                            </form>
+                        </div>
+                    )
+                }
             });
-            loading =
+            findTheRecipe =
                 <div className='recipebody'>
                     <div className="recipe-header">
                         <Navbar />
-                        <a href="/#/SearchResults"><button className="btn btn primary" >Back To Search Results</button></a>
+                        <a href="/#/SearchResults"><button className="btn btn-primary" >Back To Search Results</button></a>
                         <h2 className='recipe-result'>{this.state.recipe.title}</h2>
                         <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
                             <img className='recipeImage' src={this.state.recipe.image_url} alt="recipephoto" />
@@ -107,7 +112,9 @@ class Recipe extends Component {
                                 <h2 className='whattobuy'>Check What You Need </h2>
                                 <h3 className='ingredList'>Ingredients:</h3>
                                 {thingsToCook}
-                                <button className="btn btn primary" onClick={() => this.saveList()}>Save Your List</button>
+                                <div>
+                                <button className="btn btn-primary" onClick={() => this.saveList()}>Save Your List</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,17 +125,16 @@ class Recipe extends Component {
                 return (
                     <div key={i}>
                         <form>
-                            {/*<input onChange={(event) => { this.checkHandler(event, i) }} className='checkbox-inline' type='checkbox' />*/}
                             <label id={i} className='recipe-ingred'>{ingredient.ingredients}</label>
                         </form>
                     </div>
                 )
             });
-            loading =
+            findTheRecipe =
                 <div className='recipebody'>
                     <div className="recipe-header">
                         <Navbar />
-                        <a href="/SearchResults"><button className="btn btn primary">Back To Search Results</button></a>
+                        <a href="/SearchResults"><button className="btn btn-primary">Back To Search Results</button></a>
                         <h2 className='recipe-result'>{this.state.recipe.title}</h2>
                         <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
                             <img className='recipeImage' src={this.state.recipe.image_url} alt="recipephoto" />
@@ -140,7 +146,9 @@ class Recipe extends Component {
                                 <h2 className='whattobuy'>Check What You Need </h2>
                                 <h3 className='ingredList'>Ingredients:</h3>
                                 {thingsToCook}
-                                <h1 className='register'>Please Register To Save Your List</h1>
+                                <div>
+                                <h1 className='plzlogin'>Please Register To Save Your List</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,7 +157,7 @@ class Recipe extends Component {
 
         return (
             <div>
-                {loading}
+                {findTheRecipe}
             </div>
         )
     }

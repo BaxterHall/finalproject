@@ -21,7 +21,7 @@ class Register extends Component {
             offset: 15,
             position: 'top right',
             theme: 'dark',
-            time: 1000,
+            time: 500,
             transition: 'fade'
         };
     };
@@ -95,7 +95,7 @@ class Register extends Component {
                                     </div>
                                     <div className="form-group">
                                         <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
-                                        <button className="btn btn primary">Register</button>
+                                        <button className="btn btn-primary">Register</button>
 
                                     </div>
                                 </form>

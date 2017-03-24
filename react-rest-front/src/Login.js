@@ -20,7 +20,7 @@ class Login extends Component {
             offset: 15,
             position: 'top right',
             theme: 'dark',
-            time: 1000,
+            time: 500,
             transition: 'fade'
         };
     };
@@ -29,7 +29,7 @@ class Login extends Component {
     };
     showAlert() {
         this.msg.error('Login Unsuccessful, Please Try Again'), {
-            time: 2000,
+            time: 1000,
             type: 'error',       
         }
     };
@@ -95,7 +95,7 @@ class Login extends Component {
                                     </div>
                                     <div className="form-group">
                                         <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
-                                        <button className="btn btn primary">Login</button>
+                                        <button className="btn btn-primary">Login</button>
                                     </div>
                                 </form>
                             </div>
