@@ -26,7 +26,7 @@ const authorize = require('./middleware/authorize');
 mongoose.connect('mongodb://Baxter:Radiohead89@ds161099.mlab.com:61099/dinnerapp');
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-    console.log("Connected to db at /data/db/")
+    // console.log("Connected to db at /data/db/")
 });
 mongoose.Promise = global.Promise;
 

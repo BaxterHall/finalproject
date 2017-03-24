@@ -24,10 +24,10 @@ class UserPage extends Component {
                 // console.log(response.data)
                 let groceries = response.data
                 console.log(groceries)
-                let newGroceries = groceries.map(groc => {
-                    return ({ ingredient: JSON.parse(groc.ingredients), title: groc.title, recipe_id: groc._id })
+                let newGroceries = groceries.map(grocery => {
+                    return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
                 })
-                // console.log(newGroceries)
+                console.log(newGroceries)
                 this.setState({
                     groceryList: newGroceries,
                     loaded: true,
@@ -59,7 +59,7 @@ class UserPage extends Component {
     render() {
         let loading;
         if (this.state.loaded === false) {
-            let loading = (<h1> loading... </h1>);
+            let loading = (<h1> loading... </h1>)
         }
         else if (this.state.loaded === true && this.state.groceryList.length > 0) {
             let mostRecent = this.state.groceryList.length - 1
@@ -122,7 +122,7 @@ class UserPage extends Component {
                 </div>
             )
         }
-        else {
+        else if (this.state.loaded === true && this.state.groceryList.length < 0) {
             return (
                 loading =
                 <div>
