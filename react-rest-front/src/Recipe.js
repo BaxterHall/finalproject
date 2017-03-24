@@ -39,6 +39,13 @@ class Recipe extends Component {
             })
         document.title = "Your Recipe"
     };
+    componentWillUnmount(){
+        if(!localStorage.groceryList){
+            localStorage.groceryList = JSON.stringify(this.state.ingredients)
+            this.saveList();
+        }
+
+    }
     checkHandler(event, i) {
         if (event.target.checked) {
             this.state.ingredients[i].need = true;
