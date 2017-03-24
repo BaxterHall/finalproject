@@ -17,7 +17,7 @@ class UserPage extends Component {
         this.passId = this.passId.bind(this)
     };
     componentDidMount() {
-        document.title = "Your Cart"
+       
         // get all grocery items
         axios
             .get('/groceries/' + localStorage.username)
@@ -34,6 +34,7 @@ class UserPage extends Component {
                     loaded: true,
                 })
             })
+        document.title = "Your Cart"
     };
     deleteItem(recipeId) {
         // console.log(recipeId)
