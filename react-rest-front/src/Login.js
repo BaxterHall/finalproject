@@ -28,13 +28,9 @@ class Login extends Component {
         document.title = "Login"
     };
     showAlert() {
-        this.msg.error('Login Unsuccessful, Please Try Again'), {
+        this.msg.show('Login Unsuccessful, Please Try Again'), {
             time: 1000,
-            type: 'error',  
-            offset: 15,
-            position: 'bottom right',
-            theme: 'dark',
-            transition: 'fade'
+            type: 'error',
         }
     };
     formSubmit(e) {
