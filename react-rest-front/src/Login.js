@@ -56,7 +56,7 @@ class Login extends Component {
                 }
             })
             .catch((err) => {
-
+                console.log(err)
                 console.log('in catch')
                 this.showAlert()
                 this.setState({

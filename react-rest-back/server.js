@@ -61,7 +61,7 @@ app.post('/encrypt', (req, res) => {
             // console.log(hash)
             newUser.save()
                 .then(savedUser => {
-                    res.json(savedUser)
+                    res.send("usersaved")
                 })
         });
     });
