@@ -62,7 +62,6 @@ class UserPage extends Component {
             let loading = (<h1> loading... </h1>);
         }
         else if (this.state.loaded === true && this.state.groceryList.length > 0) {
-
             let mostRecent = this.state.groceryList.length - 1
             let recentNeedIngredients = this.state.groceryList[mostRecent].ingredient.filter(ingredient => {
                 if (ingredient.need) {
@@ -93,7 +92,6 @@ class UserPage extends Component {
             })
             // map previous recipes
             let previousRecipes = this.state.groceryList.map((Recipe, i) => {
-
                 return (
                     <Recipes recipeId={Recipe.recipe_id} key={i} title={Recipe.title} ingredients={Recipe.ingredient} deleteItem={this.deleteItem} />
                 )
