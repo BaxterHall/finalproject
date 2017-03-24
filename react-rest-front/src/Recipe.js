@@ -40,8 +40,11 @@ class Recipe extends Component {
         document.title = "Your Recipe"
     };
     componentWillUnmount(){
+
         if(!localStorage.groceryList){
+            console.log('its working')
             localStorage.groceryList = JSON.stringify(this.state.ingredients)
+            localStorage.recipeTitle = JSON.stringify(this.state.recipe.title)
             this.saveList();
         }
 
