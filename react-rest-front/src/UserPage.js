@@ -22,16 +22,24 @@ class UserPage extends Component {
             .get('/groceries/' + localStorage.username)
             .then(response => {
                 let groceries = response.data
-                let newGroceries = groceries.map(grocery => {
-                    return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
-                })
-                this.setState({
-                    groceryList: newGroceries,
-                    loaded: true,
-                })
+                if (groceries === undefined) {
+                    this.setState({
+                        groceryList: [],
+                        loaded: false
+                    })
+                }
+                else if (groceries !== undefined) {
+                    let newGroceries = groceries.map(grocery => {
+                        return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
+                    })
+                    this.setState({
+                        groceryList: newGroceries,
+                        loaded: true,
+                    })
+                }
             })
         document.title = "Your Cart"
-        if(!localStorage.authToken){
+        if (!localStorage.authToken) {
             location.href('/')
         }
     };
