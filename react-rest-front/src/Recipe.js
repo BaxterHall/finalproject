@@ -70,7 +70,7 @@ class Recipe extends Component {
             .then((res) => {
                 localStorage.groceryList = res.data.groceryList
                 localStorage.recipeTitle = res.data.recipeTitle
-                res.redirect("/#/UserPage")
+                // res.redirect("/#/UserPage")
                 location.assign("/#/UserPage")
             })
        
