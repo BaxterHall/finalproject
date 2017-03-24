@@ -58,10 +58,10 @@ class UserPage extends Component {
     };
     render() {
         let loading;
-        if (!this.state.loaded) {
+        if (this.state.loaded === false) {
             let loading = (<h1> loading... </h1>);
         }
-        else if (this.state.loaded && this.state.groceryList.length > 0) {
+        else if (this.state.loaded === true && this.state.groceryList.length > 0) {
 
             let mostRecent = this.state.groceryList.length - 1
             let recentNeedIngredients = this.state.groceryList[mostRecent].ingredient.filter(ingredient => {
@@ -141,10 +141,8 @@ class UserPage extends Component {
                         </div>
                     </div>
                 </div>
-
             )
         }
-
         return (
             <div className='userBody'>
 
