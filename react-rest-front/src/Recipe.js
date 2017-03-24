@@ -41,7 +41,7 @@ class Recipe extends Component {
     };
     componentWillUnmount(){
 
-        if(!localStorage.groceryList){
+        if(localStorage.groceryList === undefined){
             console.log('its working')
             localStorage.groceryList = JSON.stringify(this.state.ingredients)
             localStorage.recipeTitle = JSON.stringify(this.state.recipe.title)
