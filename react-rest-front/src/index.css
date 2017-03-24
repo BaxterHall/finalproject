@@ -335,13 +335,16 @@ a{
   background-color: black;
   border-color: black
 }
-.btn-primary:active{
+.btn-primary:active {
   color: black;
   background-color: darkgrey;
   border-color: black
-
 }
-
+.btn-primary:visited {
+  color: darkgrey;
+  background-color: black;
+  border-color: black
+}
 .inputform{
   text-align: center;
 }

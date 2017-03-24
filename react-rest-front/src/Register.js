@@ -50,13 +50,9 @@ class Register extends Component {
             })
     };
     showAlert() {
-        this.msg.error('Registration Unsuccessful, Username unavailable'), {
+       this.msg.show('Registration Unsuccessful, Username unavailable'), {
             time: 1000,
             type: 'error',
-            offset: 15,
-            position: 'top right',
-            theme: 'dark',
-            transition: 'fade'
         }
     };
     txtFieldChange(e) {
