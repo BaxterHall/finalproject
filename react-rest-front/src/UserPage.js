@@ -40,7 +40,7 @@ class UserPage extends Component {
         axios
             .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
-                location.href = '/#/UserPage'
+                this.forceUpdate()
                 // // console.log(response)
                 
                 // let groc = response.data
@@ -126,7 +126,7 @@ class UserPage extends Component {
                 </div>
             )
         }
-        else if (this.state.loaded && this.state.groceryList.length < 0) {
+        else{
             return (
                 <div>
                     <div className="userHeader">
