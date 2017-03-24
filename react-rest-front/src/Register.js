@@ -21,7 +21,7 @@ class Register extends Component {
             offset: 15,
             position: 'top right',
             theme: 'dark',
-            time: 500,
+            time: 1000,
             transition: 'fade'
         };
     };
@@ -51,8 +51,12 @@ class Register extends Component {
     };
     showAlert() {
         this.msg.error('Registration Unsuccessful, Username unavailable'), {
-            time: 500,
+            time: 1000,
             type: 'error',
+            offset: 15,
+            position: 'top right',
+            theme: 'dark',
+            transition: 'fade'
         }
     };
     txtFieldChange(e) {

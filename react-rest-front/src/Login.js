@@ -20,7 +20,7 @@ class Login extends Component {
             offset: 15,
             position: 'top right',
             theme: 'dark',
-            time: 500,
+            time: 1000,
             transition: 'fade'
         };
     };
@@ -30,7 +30,11 @@ class Login extends Component {
     showAlert() {
         this.msg.error('Login Unsuccessful, Please Try Again'), {
             time: 1000,
-            type: 'error',
+            type: 'error',  
+            offset: 15,
+            position: 'top right',
+            theme: 'dark',
+            transition: 'fade'
         }
     };
     formSubmit(e) {
