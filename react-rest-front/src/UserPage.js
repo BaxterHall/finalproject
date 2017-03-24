@@ -122,7 +122,7 @@ class UserPage extends Component {
                 </div>
             )
         }
-        else if (this.state.loaded === true && this.state.groceryList.length < 0) {
+        else if (this.state.loaded === true && this.state.groceryList.length === 0) {
             return (
                 loading =
                 <div>
