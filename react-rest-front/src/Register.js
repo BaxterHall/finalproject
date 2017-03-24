@@ -37,8 +37,8 @@ class Register extends Component {
                 this.setState({ warning: false })
                 location.href = "/#/Login"
             }) // console.log(res);
-            .catch(() => {
-                // console.log('in catch')
+            .catch((err) => {
+                console.log('in catch')
                 this.showAlert()
                 this.setState({
                     warning: true
