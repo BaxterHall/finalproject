@@ -16,16 +16,16 @@ class UserPage extends Component {
         this.deleteItem = this.deleteItem.bind(this)
         this.passId = this.passId.bind(this)
     };
-    componentDidMount() { 
+    componentWillMount() { 
         // get all grocery items
         axios
             .get('/groceries/' + localStorage.username)
             .then(response => {
                 // console.log(response.data)
                 let groceries = response.data
-                // console.log(groceries)
-                let newGroceries = groceries.map(grocery => {
-                    return ({ ingredient: JSON.parse(grocery.ingredients), title: grocery.title, recipe_id: grocery._id })
+                console.log(groceries)
+                let newGroceries = groceries.map(groc => {
+                    return ({ ingredient: JSON.parse(groc.ingredients), title: groc.title, recipe_id: groc._id })
                 })
                 // console.log(newGroceries)
                 this.setState({
