@@ -16,8 +16,7 @@ class UserPage extends Component {
         this.deleteItem = this.deleteItem.bind(this)
         this.passId = this.passId.bind(this)
     };
-    componentDidMount() {
-       
+    componentDidMount() { 
         // get all grocery items
         axios
             .get('/groceries/' + localStorage.username)
@@ -41,7 +40,7 @@ class UserPage extends Component {
         axios
             .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
-                location.reload();
+                location.href = "/#/UserPage"
                 // // console.log(response)
                 // let groc = response.data
                 // let newGroceries = groc.map(grocery => {
