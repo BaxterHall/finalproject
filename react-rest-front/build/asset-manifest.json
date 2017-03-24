@@ -1,25 +1,13 @@
 {
-<<<<<<< HEAD
-  "main.css": "static/css/main.11c12afc.css",
-  "main.css.map": "static/css/main.11c12afc.css.map",
-<<<<<<< HEAD
-  "main.js": "static/js/main.07a879d5.js",
-  "main.js.map": "static/js/main.07a879d5.js.map",
-=======
-  "main.js": "static/js/main.e070bbea.js",
-  "main.js.map": "static/js/main.e070bbea.js.map",
->>>>>>> parent of b6eb79c... Links and Error Messages
+  "main.css": "static/css/main.3dd10213.css",
+  "main.css.map": "static/css/main.3dd10213.css.map",
+  "main.js": "static/js/main.56a6c4eb.js",
+  "main.js.map": "static/js/main.56a6c4eb.js.map",
   "static/media/background.jpg": "static/media/background.c8ec6221.jpg",
-=======
-  "main.css": "static/css/main.601cbc54.css",
-  "main.css.map": "static/css/main.601cbc54.css.map",
-  "main.js": "static/js/main.ded9d9bd.js",
-  "main.js.map": "static/js/main.ded9d9bd.js.map",
-  "static/media/background.jpeg": "static/media/background.2ce49b6b.jpeg",
-  "static/media/cooking.jpg": "static/media/cooking.70226175.jpg",
->>>>>>> parent of 12c2c18... Image resized, fixed link paths
   "static/media/login.jpg": "static/media/login.958af6fe.jpg",
   "static/media/recipes.jpg": "static/media/recipes.2e83a6e7.jpg",
-  "static/media/searchpage.jpeg": "static/media/searchpage.54c1eed7.jpeg",
-  "static/media/userpage.jpg": "static/media/userpage.83b575e9.jpg"
+  "static/media/register.jpg": "static/media/register.70226175.jpg",
+  "static/media/searchpage.jpg": "static/media/searchpage.a2b7c77c.jpg",
+  "static/media/seconsearch.jpg": "static/media/seconsearch.b93bb389.jpg",
+  "static/media/userpage.jpg": "static/media/userpage.d5f97071.jpg"
 }
