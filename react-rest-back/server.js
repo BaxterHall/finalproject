@@ -61,6 +61,11 @@ app.post('/encrypt', (req, res) => {
                 .then(savedUser => {
                     res.send("usersaved")
                 })
+                .catch((err)=>{
+                    res
+                        .status(403)
+                        .json(err)
+                })
         });
     });
 });
