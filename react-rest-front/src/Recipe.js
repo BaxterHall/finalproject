@@ -60,8 +60,7 @@ class Recipe extends Component {
         localStorage.groceryList = JSON.stringify(this.state.ingredients)
     };
     saveList() {
-
-        if (localStorage.groceryList == undefined) {
+        if (localStorage.groceryList == undefined || localStorage.groceryList == null) {
             // console.log('its working')
             localStorage.groceryList = JSON.stringify(this.state.ingredients)
             localStorage.recipeTitle = JSON.stringify(this.state.recipe.title)
@@ -74,7 +73,6 @@ class Recipe extends Component {
                 })
         }
         else {
-            alert('in else')
             axios
                 .post('/groceryList/' + localStorage.username, { ingredients: localStorage.groceryList, title: localStorage.recipeTitle })
                 .then((res) => {
