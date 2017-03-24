@@ -17,7 +17,7 @@ class UserPage extends Component {
         this.passId = this.passId.bind(this)
     };
     componentDidMount() {
-        // get all reviews
+        // get all grocery items
         axios
             .get('/groceries/' + localStorage.username)
             .then(response => {
@@ -34,14 +34,14 @@ class UserPage extends Component {
                 })
             })
         document.title = "Your Cart"
-    
     };
     deleteItem(recipeId) {
         // console.log(recipeId)
         axios
             .delete('/groceries/' + localStorage.username + "/" + recipeId)
             .then(response => {
-                // console.log(response)
+                location.href = '/#/UserPage'
+                // // console.log(response)
                 
                 // let groc = response.data
                 // let newGroceries = groc.map(grocery => {
@@ -52,7 +52,7 @@ class UserPage extends Component {
                 //     groceryList: newGroceries,
                 //     loaded: true,
                 // })
-                location.href = '/#/UserPage'
+                
             })
     };
     passId(recipeId) {
@@ -60,10 +60,10 @@ class UserPage extends Component {
     };
     render() {
         let loading;
-        if (this.state.loaded === false) {
+        if (!this.state.loaded) {
             let loading = (<h1> loading... </h1>);
         }
-        else if (this.state.loaded === true && this.state.groceryList.length > 0) {
+        else if (this.state.loaded && this.state.groceryList.length > 0) {
 
             let mostRecent = this.state.groceryList.length - 1
             let recentNeedIngredients = this.state.groceryList[mostRecent].ingredient.filter(ingredient => {
@@ -111,7 +111,7 @@ class UserPage extends Component {
                     <div className='container'>
                         <div className='row'>
                             <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
-                            <a href="/SearchResults"><button className='cart-back'>Back To Search Results</button></a>
+                            <a href="/#/SearchResults/"><button className='cart-back'>Back To Search Results</button></a>
                                 <h2 className='newrecipeList'>Your Most Recent Recipe</h2>
                                 <h3>{this.state.groceryList[mostRecent].title}</h3>
                                 <h4 className='needList'>What You Need To Purchase</h4>
@@ -126,7 +126,7 @@ class UserPage extends Component {
                 </div>
             )
         }
-        else {
+        else if (this.state.loaded && this.state.groceryList.length < 0) {
             return (
                 <div>
                     <div className="userHeader">

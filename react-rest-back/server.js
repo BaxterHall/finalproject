@@ -171,8 +171,7 @@ app.delete('/groceries/:username/:recipe_id', (req, res) => {
             //   console.log(embRec)   
             user[0].grocerylist.remove(embRec)
             // console.log(user[0].grocerylist)
-                let updateList = user[0].grocerylist
-                
+                let updateList = user[0].grocerylist             
                 user[0].save()
                 .then(savedGroc => {
                     // console.log(savedGroc)
